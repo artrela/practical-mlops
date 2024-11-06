@@ -5,4 +5,4 @@ linting:
 	pylint ../src/main.py
 
 testing:
-	pytest ../example_tests.py
+	pytest ../tests/example_tests.py
