@@ -1,0 +1,25 @@
+name: Simple Lint & Test
+on: push
+jobs:
+  setup:
+    name: Lint & Test Code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Repository Files
+        uses: actions/checkout@v4 # needed to see local files from the repo
+      - name: Setup Python 3.10
+        uses: actions/setup-python@v5 # @ symbols are for tagged releases
+        with:
+          python-version: '3.10'
+      - name: Install Dependencies
+        run: |
+          make -C build install
+      - name: Lint
+        run: |
+          make -C build linting
+      - name: Testing
+        run: | 
+          cd build
+          make -C build testing
+      
+      
