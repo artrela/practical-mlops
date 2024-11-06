@@ -16,13 +16,12 @@ jobs:
           python-version: '3.10'
       - name: Install Dependencies
         run: |
-          make -C build install
+          make -C Chpt1-Introduction-to-MlOps/build install
       - name: Lint
         run: |
-          make -C build linting
+          make -C Chpt1-Introduction-to-MlOps/build linting
       - name: Testing
         run: | 
-          cd build
-          make -C build testing
+          make -C Chpt1-Introduction-to-MlOps/build testing
       
       
