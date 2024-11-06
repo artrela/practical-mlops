@@ -1,5 +1,8 @@
 name: Simple Lint & Test
-on: push
+on: 
+  push:
+    branches: 
+      - main
 jobs:
   setup:
     name: Lint & Test Code
